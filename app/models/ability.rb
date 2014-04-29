@@ -7,6 +7,6 @@ class Ability
         can permission.conduct.to_sym, permission.regulator.constantize
       }
     }
-
+    
   end
 end

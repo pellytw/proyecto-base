@@ -11,59 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140429134623) do
-
-  create_table "establecimientos", :force => true do |t|
-    t.integer  "numero"
-    t.string   "nombre"
-    t.integer  "localidad_id"
-    t.integer  "nivel_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
-  create_table "estado_civils", :force => true do |t|
-    t.string   "nombre"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "localidads", :force => true do |t|
-    t.string   "nombre"
-    t.integer  "region_id"
-    t.integer  "cp"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "nivels", :force => true do |t|
-    t.string   "nombre"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "personas", :force => true do |t|
-    t.string   "nombres"
-    t.string   "apellidos"
-    t.integer  "tipo_documento_id"
-    t.integer  "nro_documento"
-    t.string   "calle"
-    t.integer  "nro_calle"
-    t.string   "piso"
-    t.string   "depto"
-    t.integer  "estado_civil_id"
-    t.integer  "sexo_id"
-    t.date     "fecha_nacimiento"
-    t.integer  "localidad_id"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
-  end
-
-  create_table "regions", :force => true do |t|
-    t.string   "nombre"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20120410182942) do
 
   create_table "role_permissions", :force => true do |t|
     t.integer  "role_id"
@@ -84,18 +32,6 @@ ActiveRecord::Schema.define(:version => 20140429134623) do
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-  end
-
-  create_table "sexos", :force => true do |t|
-    t.string   "nombre"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "tipo_documentos", :force => true do |t|
-    t.string   "nombre"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "user_roles", :force => true do |t|

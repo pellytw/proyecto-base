@@ -1,3 +1,5 @@
+ActiveRecord::Base.establish_connection(:"global_#{Rails.env}")
+
 class CreateNivels < ActiveRecord::Migration
   def change
     create_table :nivels do |t|
