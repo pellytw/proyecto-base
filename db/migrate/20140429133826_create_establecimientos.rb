@@ -1,5 +1,3 @@
-ActiveRecord::Base.establish_connection(:"global_#{Rails.env}")
-
 class CreateEstablecimientos < ActiveRecord::Migration
   def change
     create_table :establecimientos do |t|

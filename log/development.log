@@ -44587,3 +44587,286 @@ Migrating to CreateEstadoCivils (20140429134623)
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (1.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to DeviseCreateUsers (20120201182115)
+Migrating to CreateRoles (20120224180650)
+Migrating to CreateRoleRoles (20120224181028)
+Migrating to CreateUserRoles (20120302182538)
+Migrating to CreateRolePermissions (20120410182942)
+Migrating to AgregarApellidosYNombresAUser (20130815141202)
+  [1m[35m (308.1ms)[0m  ALTER TABLE `users` ADD `apellidos` varchar(255)
+  [1m[36m (208.9ms)[0m  [1mALTER TABLE `users` ADD `nombres` varchar(255)[0m
+  [1m[35m (32.9ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20130815141202')
+Migrating to CreateEstablecimientos (20140429133826)
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE `establecimientos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `numero` int(11), `nombre` varchar(255), `localidad_id` int(11), `nivel_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+Mysql2::Error: Table 'establecimientos' already exists: CREATE TABLE `establecimientos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `numero` int(11), `nombre` varchar(255), `localidad_id` int(11), `nivel_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (84.7ms)[0m  [1mCREATE TABLE `role_permissions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `role_id` int(11), `regulator` varchar(255), `conduct` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (65.1ms)[0m  CREATE TABLE `role_roles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `role_id` int(11), `parent_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (65.7ms)[0m  [1mCREATE TABLE `roles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (73.9ms)[0m  CREATE TABLE `user_roles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `role_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (71.5ms)[0m  [1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (133.1ms)[0m  CREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)
+  [1m[36m (141.5ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)[0m
+  [1m[35m (65.9ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (151.5ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (32.0ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20120410182942')[0m
+  [1m[35m (33.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20120201182115')
+  [1m[36m (33.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20120224181028')[0m
+  [1m[35m (33.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20120302182538')
+  [1m[36m (33.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20120224180650')[0m
+  [1m[35m (1.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+  [1m[36m (1.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to DeviseCreateUsers (20120201182115)
+Migrating to CreateRoles (20120224180650)
+Migrating to CreateRoleRoles (20120224181028)
+Migrating to CreateUserRoles (20120302182538)
+Migrating to CreateRolePermissions (20120410182942)
+Migrating to AgregarApellidosYNombresAUser (20130815141202)
+  [1m[35m (190.8ms)[0m  ALTER TABLE `users` ADD `apellidos` varchar(255)
+  [1m[36m (291.9ms)[0m  [1mALTER TABLE `users` ADD `nombres` varchar(255)[0m
+  [1m[35m (32.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20130815141202')
+Migrating to CreateEstablecimientos (20140429133826)
+  [1m[36m (64.9ms)[0m  [1mCREATE TABLE `establecimientos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `numero` int(11), `nombre` varchar(255), `localidad_id` int(11), `nivel_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (41.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140429133826')
+Migrating to CreateLocalidads (20140429133914)
+  [1m[36m (73.3ms)[0m  [1mCREATE TABLE `localidads` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nombre` varchar(255), `region_id` int(11), `cp` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (41.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140429133914')
+Migrating to CreateNivels (20140429133934)
+  [1m[36m (65.2ms)[0m  [1mCREATE TABLE `nivels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nombre` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (32.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140429133934')
+Migrating to CreatePersonas (20140429134459)
+  [1m[36m (182.7ms)[0m  [1mCREATE TABLE `personas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nombres` varchar(255), `apellidos` varchar(255), `tipo_documento_id` int(11), `nro_documento` int(11), `calle` varchar(255), `nro_calle` int(11), `piso` varchar(255), `depto` varchar(255), `estado_civil_id` int(11), `sexo_id` int(11), `fecha_nacimiento` date, `localidad_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (49.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140429134459')
+Migrating to CreateRegions (20140429134521)
+  [1m[36m (65.2ms)[0m  [1mCREATE TABLE `regions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nombre` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (32.7ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140429134521')
+Migrating to CreateSexos (20140429134538)
+  [1m[36m (65.1ms)[0m  [1mCREATE TABLE `sexos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nombre` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (66.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140429134538')
+Migrating to CreateTipoDocumentos (20140429134600)
+  [1m[36m (137.5ms)[0m  [1mCREATE TABLE `tipo_documentos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nombre` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (53.7ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140429134600')
+Migrating to CreateEstadoCivils (20140429134623)
+  [1m[36m (65.7ms)[0m  [1mCREATE TABLE `estado_civils` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nombre` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (45.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140429134623')
+  [1m[36m (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+  [1m[36m (1.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `roles` (`created_at`, `description`, `updated_at`) VALUES ('2014-05-05 11:37:08', 'Admin', '2014-05-05 11:37:08')[0m
+  [1m[35m (89.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `roles` (`created_at`, `description`, `updated_at`) VALUES ('2014-05-05 11:37:08', 'User', '2014-05-05 11:37:08')
+  [1m[36m (30.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@admin.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`apellidos`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `nombres`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (NULL, '2014-05-05 11:37:08', NULL, NULL, 'admin@admin.com', '$2a$10$Ws5E4p6Zbiz9V9Ho0e4KS.geYAre5/UfTXpYI/lqO3Fn8e8qrFsHe', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2014-05-05 11:37:08')
+  [1m[36m (37.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user@user.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `users` (`apellidos`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `nombres`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (NULL, '2014-05-05 11:37:08', NULL, NULL, 'user@user.com', '$2a$10$Ss4KaHZ0qDlHHhfEMxQfW.FrWDKvhCeXR/Z2ySmjR5dSbCfZ/w4gi', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2014-05-05 11:37:08')
+  [1m[36m (34.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `user_roles` (`created_at`, `role_id`, `updated_at`, `user_id`) VALUES ('2014-05-05 11:37:08', 1, '2014-05-05 11:37:08', 1)[0m
+  [1m[35m (29.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `user_roles` (`created_at`, `role_id`, `updated_at`, `user_id`) VALUES ('2014-05-05 11:37:08', 2, '2014-05-05 11:37:08', 2)
+  [1m[36m (31.4ms)[0m  [1mCOMMIT[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (39.0ms)[0m  [1mDROP TABLE `establecimientos`[0m
+  [1m[35m (66.9ms)[0m  CREATE TABLE `establecimientos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `numero` int(11), `nombre` varchar(255), `localidad_id` int(11), `nivel_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (48.8ms)[0m  [1mDROP TABLE `estado_civils`[0m
+  [1m[35m (67.0ms)[0m  CREATE TABLE `estado_civils` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nombre` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (32.2ms)[0m  [1mDROP TABLE `localidads`[0m
+  [1m[35m (75.0ms)[0m  CREATE TABLE `localidads` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nombre` varchar(255), `region_id` int(11), `cp` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (40.7ms)[0m  [1mDROP TABLE `nivels`[0m
+  [1m[35m (75.0ms)[0m  CREATE TABLE `nivels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nombre` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (40.8ms)[0m  [1mDROP TABLE `personas`[0m
+  [1m[35m (66.5ms)[0m  CREATE TABLE `personas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nombres` varchar(255), `apellidos` varchar(255), `tipo_documento_id` int(11), `nro_documento` int(11), `calle` varchar(255), `nro_calle` int(11), `piso` varchar(255), `depto` varchar(255), `estado_civil_id` int(11), `sexo_id` int(11), `fecha_nacimiento` date, `localidad_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (32.8ms)[0m  [1mDROP TABLE `regions`[0m
+  [1m[35m (66.7ms)[0m  CREATE TABLE `regions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nombre` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (32.8ms)[0m  [1mDROP TABLE `role_permissions`[0m
+  [1m[35m (66.7ms)[0m  CREATE TABLE `role_permissions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `role_id` int(11), `regulator` varchar(255), `conduct` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (32.7ms)[0m  [1mDROP TABLE `role_roles`[0m
+  [1m[35m (66.7ms)[0m  CREATE TABLE `role_roles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `role_id` int(11), `parent_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (32.9ms)[0m  [1mDROP TABLE `roles`[0m
+  [1m[35m (66.6ms)[0m  CREATE TABLE `roles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (32.4ms)[0m  [1mDROP TABLE `sexos`[0m
+  [1m[35m (66.6ms)[0m  CREATE TABLE `sexos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nombre` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (32.6ms)[0m  [1mDROP TABLE `tipo_documentos`[0m
+  [1m[35m (67.9ms)[0m  CREATE TABLE `tipo_documentos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nombre` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (40.7ms)[0m  [1mDROP TABLE `user_roles`[0m
+  [1m[35m (66.7ms)[0m  CREATE TABLE `user_roles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `role_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (32.5ms)[0m  [1mDROP TABLE `users`[0m
+  [1m[35m (61.3ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `apellidos` varchar(255), `nombres` varchar(255)) ENGINE=InnoDB
+  [1m[36m (116.4ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [1m[35m (124.5ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (2.1ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `roles` (`created_at`, `description`, `updated_at`) VALUES ('2014-05-05 11:37:40', 'Admin', '2014-05-05 11:37:40')
+  [1m[36m (67.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `roles` (`created_at`, `description`, `updated_at`) VALUES ('2014-05-05 11:37:40', 'User', '2014-05-05 11:37:40')[0m
+  [1m[35m (31.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@admin.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `users` (`apellidos`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `nombres`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (NULL, '2014-05-05 11:37:41', NULL, NULL, 'admin@admin.com', '$2a$10$dstTXdqijI77WnpCQTssqeS63nDBrNCxRTaYnbxxa5yRAunJGGFfa', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2014-05-05 11:37:41')[0m
+  [1m[35m (34.7ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user@user.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `users` (`apellidos`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `nombres`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (NULL, '2014-05-05 11:37:41', NULL, NULL, 'user@user.com', '$2a$10$AyPhEkbmSLj69.BUfdM3weTzA5JJ87caZrAPoYT76YJq8QHamw96S', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2014-05-05 11:37:41')[0m
+  [1m[35m (63.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `user_roles` (`created_at`, `role_id`, `updated_at`, `user_id`) VALUES ('2014-05-05 11:37:41', 1, '2014-05-05 11:37:41', 1)
+  [1m[36m (28.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `user_roles` (`created_at`, `role_id`, `updated_at`, `user_id`) VALUES ('2014-05-05 11:37:41', 2, '2014-05-05 11:37:41', 2)[0m
+  [1m[35m (39.4ms)[0m  COMMIT
+Connecting to database specified by database.yml
+  [1m[36m (51.1ms)[0m  [1mDROP TABLE `establecimientos`[0m
+  [1m[35m (74.7ms)[0m  CREATE TABLE `establecimientos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `numero` int(11), `nombre` varchar(255), `localidad_id` int(11), `nivel_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (32.2ms)[0m  [1mDROP TABLE `estado_civils`[0m
+  [1m[35m (66.5ms)[0m  CREATE TABLE `estado_civils` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nombre` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (32.3ms)[0m  [1mDROP TABLE `localidads`[0m
+  [1m[35m (66.6ms)[0m  CREATE TABLE `localidads` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nombre` varchar(255), `region_id` int(11), `cp` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (32.4ms)[0m  [1mDROP TABLE `nivels`[0m
+  [1m[35m (233.6ms)[0m  CREATE TABLE `nivels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nombre` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (65.6ms)[0m  [1mDROP TABLE `personas`[0m
+  [1m[35m (309.0ms)[0m  CREATE TABLE `personas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nombres` varchar(255), `apellidos` varchar(255), `tipo_documento_id` int(11), `nro_documento` int(11), `calle` varchar(255), `nro_calle` int(11), `piso` varchar(255), `depto` varchar(255), `estado_civil_id` int(11), `sexo_id` int(11), `fecha_nacimiento` date, `localidad_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (32.1ms)[0m  [1mDROP TABLE `regions`[0m
+  [1m[35m (66.6ms)[0m  CREATE TABLE `regions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nombre` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (40.6ms)[0m  [1mDROP TABLE `role_permissions`[0m
+  [1m[35m (66.6ms)[0m  CREATE TABLE `role_permissions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `role_id` int(11), `regulator` varchar(255), `conduct` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (32.2ms)[0m  [1mDROP TABLE `role_roles`[0m
+  [1m[35m (66.5ms)[0m  CREATE TABLE `role_roles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `role_id` int(11), `parent_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (32.3ms)[0m  [1mDROP TABLE `roles`[0m
+  [1m[35m (76.1ms)[0m  CREATE TABLE `roles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (32.1ms)[0m  [1mDROP TABLE `sexos`[0m
+  [1m[35m (66.6ms)[0m  CREATE TABLE `sexos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nombre` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (32.4ms)[0m  [1mDROP TABLE `tipo_documentos`[0m
+  [1m[35m (66.6ms)[0m  CREATE TABLE `tipo_documentos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nombre` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (32.3ms)[0m  [1mDROP TABLE `user_roles`[0m
+  [1m[35m (66.5ms)[0m  CREATE TABLE `user_roles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `role_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (31.9ms)[0m  [1mDROP TABLE `users`[0m
+  [1m[35m (69.2ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `apellidos` varchar(255), `nombres` varchar(255)) ENGINE=InnoDB
+  [1m[36m (141.1ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [1m[35m (149.7ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (1.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `roles` (`created_at`, `description`, `updated_at`) VALUES ('2014-05-05 11:37:50', 'Admin', '2014-05-05 11:37:50')
+  [1m[36m (29.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `roles` (`created_at`, `description`, `updated_at`) VALUES ('2014-05-05 11:37:50', 'User', '2014-05-05 11:37:50')[0m
+  [1m[35m (32.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@admin.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `users` (`apellidos`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `nombres`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (NULL, '2014-05-05 11:37:51', NULL, NULL, 'admin@admin.com', '$2a$10$ghdGJ2LH8jgFiFko74bVpOZVaW./HabwBXVIiY8fZaN66HeTILKBq', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2014-05-05 11:37:51')[0m
+  [1m[35m (35.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user@user.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `users` (`apellidos`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `nombres`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (NULL, '2014-05-05 11:37:51', NULL, NULL, 'user@user.com', '$2a$10$D7hq7Mq0RaETOy/AXTVaF.hHEbhvadOhnObdHiuo4/EH2WMbvTJtG', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2014-05-05 11:37:51')[0m
+  [1m[35m (34.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `user_roles` (`created_at`, `role_id`, `updated_at`, `user_id`) VALUES ('2014-05-05 11:37:51', 1, '2014-05-05 11:37:51', 1)
+  [1m[36m (33.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `user_roles` (`created_at`, `role_id`, `updated_at`, `user_id`) VALUES ('2014-05-05 11:37:51', 2, '2014-05-05 11:37:51', 2)[0m
+  [1m[35m (32.2ms)[0m  COMMIT
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to DeviseCreateUsers (20120201182115)
+Migrating to CreateRoles (20120224180650)
+Migrating to CreateRoleRoles (20120224181028)
+Migrating to CreateUserRoles (20120302182538)
+Migrating to CreateRolePermissions (20120410182942)
+Migrating to AgregarApellidosYNombresAUser (20130815141202)
+Migrating to CreateEstablecimientos (20140429133826)
+Migrating to CreateLocalidads (20140429133914)
+Migrating to CreateNivels (20140429133934)
+Migrating to CreatePersonas (20140429134459)
+Migrating to CreateRegions (20140429134521)
+Migrating to CreateSexos (20140429134538)
+Migrating to CreateTipoDocumentos (20140429134600)
+Migrating to CreateEstadoCivils (20140429134623)
+  [1m[35m (0.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+  [1m[36m (68.8ms)[0m  [1mCREATE TABLE `establecimientos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `numero` int(11), `nombre` varchar(255), `localidad_id` int(11), `nivel_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (65.2ms)[0m  CREATE TABLE `estado_civils` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nombre` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (232.2ms)[0m  [1mCREATE TABLE `localidads` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nombre` varchar(255), `region_id` int(11), `cp` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (65.7ms)[0m  CREATE TABLE `nivels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nombre` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (65.5ms)[0m  [1mCREATE TABLE `personas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nombres` varchar(255), `apellidos` varchar(255), `tipo_documento_id` int(11), `nro_documento` int(11), `calle` varchar(255), `nro_calle` int(11), `piso` varchar(255), `depto` varchar(255), `estado_civil_id` int(11), `sexo_id` int(11), `fecha_nacimiento` date, `localidad_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (74.1ms)[0m  CREATE TABLE `regions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nombre` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (65.8ms)[0m  [1mCREATE TABLE `role_permissions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `role_id` int(11), `regulator` varchar(255), `conduct` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (65.9ms)[0m  CREATE TABLE `role_roles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `role_id` int(11), `parent_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (65.8ms)[0m  [1mCREATE TABLE `roles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (65.6ms)[0m  CREATE TABLE `sexos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nombre` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (65.4ms)[0m  [1mCREATE TABLE `tipo_documentos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nombre` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (65.4ms)[0m  CREATE TABLE `user_roles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `role_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (68.7ms)[0m  [1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `apellidos` varchar(255), `nombres` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (124.5ms)[0m  CREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)
+  [1m[36m (125.7ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)[0m
+  [1m[35m (73.8ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (166.7ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (31.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140429134623')[0m
+  [1m[35m (33.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20120201182115')
+  [1m[36m (33.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20120410182942')[0m
+  [1m[35m (33.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140429133934')
+  [1m[36m (33.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20120224181028')[0m
+  [1m[35m (33.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140429134538')
+  [1m[36m (33.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140429134521')[0m
+  [1m[35m (33.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20120302182538')
+  [1m[36m (33.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140429134459')[0m
+  [1m[35m (33.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140429133826')
+  [1m[36m (33.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140429134600')[0m
+  [1m[35m (33.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20130815141202')
+  [1m[36m (33.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140429133914')[0m
+  [1m[35m (47.0ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20120224180650')
+  [1m[36m (1.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `roles` (`created_at`, `description`, `updated_at`) VALUES ('2014-05-05 11:39:01', 'Admin', '2014-05-05 11:39:01')[0m
+  [1m[35m (42.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `roles` (`created_at`, `description`, `updated_at`) VALUES ('2014-05-05 11:39:01', 'User', '2014-05-05 11:39:01')
+  [1m[36m (32.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@admin.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `users` (`apellidos`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `nombres`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (NULL, '2014-05-05 11:39:01', NULL, NULL, 'admin@admin.com', '$2a$10$PXMrPMNDxUMRw9B2po89HewA1kriN54tYxs.qUF0HAF7ZonXsD5wO', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2014-05-05 11:39:01')
+  [1m[36m (31.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user@user.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `users` (`apellidos`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `nombres`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (NULL, '2014-05-05 11:39:01', NULL, NULL, 'user@user.com', '$2a$10$QaeLJZ7KEoQy//zWpj/6GuKvkYER6PC1vldwQeDlrHhlQ2nc6l2x.', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2014-05-05 11:39:01')
+  [1m[36m (34.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `user_roles` (`created_at`, `role_id`, `updated_at`, `user_id`) VALUES ('2014-05-05 11:39:01', 1, '2014-05-05 11:39:01', 1)[0m
+  [1m[35m (35.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `user_roles` (`created_at`, `role_id`, `updated_at`, `user_id`) VALUES ('2014-05-05 11:39:01', 2, '2014-05-05 11:39:01', 2)
+  [1m[36m (31.1ms)[0m  [1mCOMMIT[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to DeviseCreateUsers (20120201182115)
+Migrating to CreateRoles (20120224180650)
+Migrating to CreateRoleRoles (20120224181028)
+Migrating to CreateUserRoles (20120302182538)
+Migrating to CreateRolePermissions (20120410182942)
+Migrating to AgregarApellidosYNombresAUser (20130815141202)
+Migrating to CreateEstablecimientos (20140429133826)
+Migrating to CreateLocalidads (20140429133914)
+Migrating to CreateNivels (20140429133934)
+Migrating to CreatePersonas (20140429134459)
+Migrating to CreateRegions (20140429134521)
+Migrating to CreateSexos (20140429134538)
+Migrating to CreateTipoDocumentos (20140429134600)
+Migrating to CreateEstadoCivils (20140429134623)
+  [1m[35m (0.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml

@@ -1,5 +1,3 @@
-ActiveRecord::Base.establish_connection(:"global_#{Rails.env}")
-
 class CreateLocalidads < ActiveRecord::Migration
   def change
     create_table :localidads do |t|

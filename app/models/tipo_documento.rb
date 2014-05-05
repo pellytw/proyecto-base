@@ -1,8 +1,3 @@
-class GlobalTabla < ActiveRecord::Base
-  self.abstract_class = true
-  establish_connection "global_#{Rails.env}"
-end
-
-class TipoDocumento < GlobalTabla
+class TipoDocumento < ActiveRecord::Base
   attr_accessible :nombre
 end
