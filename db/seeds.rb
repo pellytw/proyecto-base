@@ -45,6 +45,11 @@ Nivel.create(nombre:"Superior")
 Nivel.create(nombre:"Terciario")
 Nivel.create(nombre:"Universitario")
 
+#Carga de situacion de revista
+SituacionRevistum.create(nombre:"Interino")
+SituacionRevistum.create(nombre:"Suplente")
+SituacionRevistum.create(nombre:"Titular")
+
 #Carga de localidades
 Localidad.create(region_id:4, nombre:"28 DE JULIO")
 Localidad.create(region_id:5, nombre:"ALDA BELEIRO")

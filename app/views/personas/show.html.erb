@@ -28,6 +28,8 @@
   <dd><%= @persona.fecha_nacimiento %></dd>
   <dt><strong><%= model_class.human_attribute_name(:localidad_id) %>:</strong></dt>
   <dd><%= @persona.localidad %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:situacion_revista_id) %>:</strong></dt>
+  <dd><%= SituacionRevistum.find(@persona.situacion_revista_id) %></dd>
 </dl>
 
 <div class="form-actions">

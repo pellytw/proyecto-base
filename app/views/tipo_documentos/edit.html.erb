@@ -1,6 +1,6 @@
-<h1>Editing tipo_documento</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @tipo_documento %> |
-<%= link_to 'Back', tipo_documentos_path %>
+<%- model_class = TipoDocumento -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => t('helpers.titles.edit', :model => model_class.model_name.human,
+                                   :default => "Edit #{model_class.model_name.human}") %></h1>
+</div>
+<%= render :partial => 'form' %>
