@@ -1,21 +1,14 @@
-<%= form_for(@estado_civil) do |f| %>
-  <% if @estado_civil.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@estado_civil.errors.count, "error") %> prohibited this estado_civil from being saved:</h2>
-
-      <ul>
-      <% @estado_civil.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @estado_civil, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :nombre, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nombre, :class => 'text_field' %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :nombre %><br />
-    <%= f.text_field :nombre %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                estado_civils_path, :class => 'btn' %>
   </div>
 <% end %>
