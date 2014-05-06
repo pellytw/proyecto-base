@@ -12,8 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :numero %><br />
-    <%= f.number_field :numero %>
+    <%= f.label :codigo_jurisdiccional %><br />
+    <%= f.text_field :codigo_jurisdiccional %>
+  </div>
+  <div class="field">
+    <%= f.label :cue %><br />
+    <%= f.number_field :cue %>
+  </div>
+  <div class="field">
+    <%= f.label :anexo %><br />
+    <%= f.number_field :anexo %>
+  </div>
+  <div class="field">
+    <%= f.label :cue_anexo %><br />
+    <%= f.number_field :cue_anexo %>
+  </div>
+  <div class="field">
+    <%= f.label :sector %><br />
+    <%= f.text_field :sector %>
+  </div>
+  <div class="field">
+    <%= f.label :ambito %><br />
+    <%= f.text_field :ambito %>
   </div>
   <div class="field">
     <%= f.label :nombre %><br />
@@ -24,8 +44,8 @@
     <%= f.number_field :localidad_id %>
   </div>
   <div class="field">
-    <%= f.label :nivel_id %><br />
-    <%= f.number_field :nivel_id %>
+    <%= f.label :domicilio %><br />
+    <%= f.text_field :domicilio %>
   </div>
   <div class="actions">
     <%= f.submit %>

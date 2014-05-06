@@ -18,7 +18,7 @@ class EstablecimientosControllerTest < ActionController::TestCase
 
   test "should create establecimiento" do
     assert_difference('Establecimiento.count') do
-      post :create, establecimiento: { localidad_id: @establecimiento.localidad_id, nivel_id: @establecimiento.nivel_id, nombre: @establecimiento.nombre, numero: @establecimiento.numero }
+      post :create, establecimiento: { ambito: @establecimiento.ambito, anexo: @establecimiento.anexo, codigo_jurisdiccional: @establecimiento.codigo_jurisdiccional, cue: @establecimiento.cue, cue_anexo: @establecimiento.cue_anexo, domicilio: @establecimiento.domicilio, localidad_id: @establecimiento.localidad_id, nombre: @establecimiento.nombre, sector: @establecimiento.sector }
     end
 
     assert_redirected_to establecimiento_path(assigns(:establecimiento))
@@ -35,7 +35,7 @@ class EstablecimientosControllerTest < ActionController::TestCase
   end
 
   test "should update establecimiento" do
-    put :update, id: @establecimiento, establecimiento: { localidad_id: @establecimiento.localidad_id, nivel_id: @establecimiento.nivel_id, nombre: @establecimiento.nombre, numero: @establecimiento.numero }
+    put :update, id: @establecimiento, establecimiento: { ambito: @establecimiento.ambito, anexo: @establecimiento.anexo, codigo_jurisdiccional: @establecimiento.codigo_jurisdiccional, cue: @establecimiento.cue, cue_anexo: @establecimiento.cue_anexo, domicilio: @establecimiento.domicilio, localidad_id: @establecimiento.localidad_id, nombre: @establecimiento.nombre, sector: @establecimiento.sector }
     assert_redirected_to establecimiento_path(assigns(:establecimiento))
   end
 

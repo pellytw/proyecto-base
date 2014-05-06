@@ -2,10 +2,15 @@
 
 <table>
   <tr>
-    <th>Numero</th>
+    <th>Codigo jurisdiccional</th>
+    <th>Cue</th>
+    <th>Anexo</th>
+    <th>Cue anexo</th>
+    <th>Sector</th>
+    <th>Ambito</th>
     <th>Nombre</th>
     <th>Localidad</th>
-    <th>Nivel</th>
+    <th>Domicilio</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,10 +18,15 @@
 
 <% @establecimientos.each do |establecimiento| %>
   <tr>
-    <td><%= establecimiento.numero %></td>
+    <td><%= establecimiento.codigo_jurisdiccional %></td>
+    <td><%= establecimiento.cue %></td>
+    <td><%= establecimiento.anexo %></td>
+    <td><%= establecimiento.cue_anexo %></td>
+    <td><%= establecimiento.sector %></td>
+    <td><%= establecimiento.ambito %></td>
     <td><%= establecimiento.nombre %></td>
     <td><%= establecimiento.localidad_id %></td>
-    <td><%= establecimiento.nivel_id %></td>
+    <td><%= establecimiento.domicilio %></td>
     <td><%= link_to 'Show', establecimiento %></td>
     <td><%= link_to 'Edit', edit_establecimiento_path(establecimiento) %></td>
     <td><%= link_to 'Destroy', establecimiento, method: :delete, data: { confirm: 'Are you sure?' } %></td>

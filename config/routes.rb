@@ -1,4 +1,6 @@
 Mysecurity::Application.routes.draw do
+  resources :establecimientos
+
   resources :estado_civils
 
   resources :tipo_documentos
@@ -12,8 +14,6 @@ Mysecurity::Application.routes.draw do
   resources :nivels
 
   resources :localidads
-
-  resources :establecimientos
 
   resources :role_permissions
 
@@ -82,6 +82,6 @@ Mysecurity::Application.routes.draw do
   #
   #
 
-  root :to => "home#index"
+  root :to => "establecimientos#index"
 
 end
