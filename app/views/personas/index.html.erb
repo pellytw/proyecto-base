@@ -17,6 +17,7 @@
       <th><%= model_class.human_attribute_name(:sexo_id) %></th>
       <th><%= model_class.human_attribute_name(:fecha_nacimiento) %></th>
       <th><%= model_class.human_attribute_name(:localidad_id) %></th>
+      <th><%= model_class.human_attribute_name(:situacion_revista_id) %></th>
       <th class="pull-right"><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -25,16 +26,17 @@
       <tr>
         <td><%= persona.nombres %></td>
         <td><%= persona.apellidos %></td>
-        <td><%= persona.tipo_documento_id %></td>
+        <td><%= persona.tipo_documento %></td>
         <td><%= persona.nro_documento %></td>
         <td><%= persona.calle %></td>
         <td><%= persona.nro_calle %></td>
         <td><%= persona.piso %></td>
         <td><%= persona.depto %></td>
-        <td><%= persona.estado_civil_id %></td>
-        <td><%= persona.sexo_id %></td>
+        <td><%= persona.estado_civil %></td>
+        <td><%= persona.sexo %></td>
         <td><%= persona.fecha_nacimiento %></td>
-        <td><%= persona.localidad_id %></td>
+        <td><%= persona.localidad %></td>
+        <td><%= SituacionRevistum.find(persona.situacion_revista_id) %></td>
         <td>
           <div class="btn-group pull-right">
             <a class="btn dropdown-toggle btn-primary" data-toggle="dropdown" href="#">
