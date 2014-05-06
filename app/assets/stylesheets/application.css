@@ -6,4 +6,6 @@
  *= require bootstrap_and_overrides
  *= require tables
  *= require dataTables/jquery.dataTables.bootstrap
+ *= require jquery-ui-timepicker-addon
+ *= require jquery-ui/ui-lightness
 */

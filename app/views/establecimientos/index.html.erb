@@ -17,6 +17,10 @@
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
+  <tfoot>
+    <tr>
+    </tr>
+  </tfoot>
   <tbody>
     <% @establecimientos.each do |establecimiento| %>
       <tr>
@@ -55,6 +59,12 @@
 
 <script type="text/javascript">
     $(document).ready(function($) {
+
+      $('#tabla-establecimientos tfoot th').each( function () {
+        var title = $('#tabla-establecimientos thead th').eq( $(this).index() ).text();
+        $(this).html( '<input type="text" placeholder="Buscar '+title+'" />' );
+      } );
+
       $('#tabla-establecimientos').dataTable({
               "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
               "sPaginationType": "bootstrap",
@@ -65,6 +75,12 @@
                     "sUrl": "language.es.json",
                 },
                 "aaSorting": [[ 0, "desc" ]],
-            });
+      });
+      $("#tabla-establecimientos tfoot input").on( 'keyup change', function () {
+        table
+            .column( $(this).parent().index()+':visible' )
+            .search( this.value )
+            .draw();
+    } );
     });
 </script>

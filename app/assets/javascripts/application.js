@@ -10,3 +10,5 @@
 //= require allPages
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
+//= require jquery-ui
+//= require jquery-ui-timepicker-addon.js

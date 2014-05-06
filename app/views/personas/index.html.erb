@@ -1,45 +1,76 @@
-<h1>Listing personas</h1>
-
-<table>
-  <tr>
-    <th>Nombres</th>
-    <th>Apellidos</th>
-    <th>Tipo documento</th>
-    <th>Nro documento</th>
-    <th>Calle</th>
-    <th>Nro calle</th>
-    <th>Piso</th>
-    <th>Depto</th>
-    <th>Estado civil</th>
-    <th>Sexo</th>
-    <th>Fecha nacimiento</th>
-    <th>Localidad</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @personas.each do |persona| %>
-  <tr>
-    <td><%= persona.nombres %></td>
-    <td><%= persona.apellidos %></td>
-    <td><%= persona.tipo_documento_id %></td>
-    <td><%= persona.nro_documento %></td>
-    <td><%= persona.calle %></td>
-    <td><%= persona.nro_calle %></td>
-    <td><%= persona.piso %></td>
-    <td><%= persona.depto %></td>
-    <td><%= persona.estado_civil_id %></td>
-    <td><%= persona.sexo_id %></td>
-    <td><%= persona.fecha_nacimiento %></td>
-    <td><%= persona.localidad_id %></td>
-    <td><%= link_to 'Show', persona %></td>
-    <td><%= link_to 'Edit', edit_persona_path(persona) %></td>
-    <td><%= link_to 'Destroy', persona, method: :delete, data: { confirm: 'Seguro desea eliminar?' } %></td>
-  </tr>
-<% end %>
+<%- model_class = Persona -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table id="tabla-personas" class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:nombres) %></th>
+      <th><%= model_class.human_attribute_name(:apellidos) %></th>
+      <th><%= model_class.human_attribute_name(:tipo_documento_id) %></th>
+      <th><%= model_class.human_attribute_name(:nro_documento) %></th>
+      <th><%= model_class.human_attribute_name(:calle) %></th>
+      <th><%= model_class.human_attribute_name(:nro_calle) %></th>
+      <th><%= model_class.human_attribute_name(:piso) %></th>
+      <th><%= model_class.human_attribute_name(:depto) %></th>
+      <th><%= model_class.human_attribute_name(:estado_civil_id) %></th>
+      <th><%= model_class.human_attribute_name(:sexo_id) %></th>
+      <th><%= model_class.human_attribute_name(:fecha_nacimiento) %></th>
+      <th><%= model_class.human_attribute_name(:localidad_id) %></th>
+      <th class="pull-right"><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @personas.each do |persona| %>
+      <tr>
+        <td><%= persona.nombres %></td>
+        <td><%= persona.apellidos %></td>
+        <td><%= persona.tipo_documento_id %></td>
+        <td><%= persona.nro_documento %></td>
+        <td><%= persona.calle %></td>
+        <td><%= persona.nro_calle %></td>
+        <td><%= persona.piso %></td>
+        <td><%= persona.depto %></td>
+        <td><%= persona.estado_civil_id %></td>
+        <td><%= persona.sexo_id %></td>
+        <td><%= persona.fecha_nacimiento %></td>
+        <td><%= persona.localidad_id %></td>
+        <td>
+          <div class="btn-group pull-right">
+            <a class="btn dropdown-toggle btn-primary" data-toggle="dropdown" href="#">
+              Acciones
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to 'Ver', persona %></li>
+              <li><%= link_to 'Editar', edit_persona_path(persona) %></li>
+              <li><%= link_to 'Eliminar', persona, method: :delete, data: { confirm: 'Seguro desea eliminar?' } %></li>
+              </li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_persona_path,
+            :class => 'btn btn-primary' %>
 
-<%= link_to 'New Persona', new_persona_path %>
+
+<script type="text/javascript">
+    $(document).ready(function($) {
+      $('#tabla-personas').dataTable({
+              "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
+              "sPaginationType": "bootstrap",
+              "aoColumnDefs": [
+                { "bSearchable": false, "aTargets": [ 9 ] }
+              ],
+              "oLanguage": {
+                    "sUrl": "language.es.json",
+                },
+                "aaSorting": [[ 0, "desc" ]],
+            });
+    });
+</script>
