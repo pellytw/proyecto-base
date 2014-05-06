@@ -1,4 +1,6 @@
 Mysecurity::Application.routes.draw do
+  resources :situacion_revista
+
   resources :establecimientos
 
   resources :estado_civils
