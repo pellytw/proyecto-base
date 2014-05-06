@@ -14,13 +14,13 @@
   <div class="control-group">
     <%= f.label :tipo_documento_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :tipo_documento_id, :class => 'number_field' %>
+      <%= f.collection_select(:tipo_documento_id, TipoDocumento.all, :id, :nombre) %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :nro_documento, :class => 'control-label' %>
+    <%= f.label "Número de Documento", :class => 'control-label'  %>
     <div class="controls">
-      <%= f.number_field :nro_documento, :class => 'number_field' %>
+      <%= f.text_field :nro_documento, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
@@ -30,9 +30,9 @@
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :nro_calle, :class => 'control-label' %>
+    <%= f.label "Número de Calle", :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :nro_calle, :class => 'number_field' %>
+      <%= f.text_field :nro_calle, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
@@ -50,25 +50,25 @@
   <div class="control-group">
     <%= f.label :estado_civil_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :estado_civil_id, :class => 'number_field' %>
+      <%= f.collection_select(:estado_civil_id, EstadoCivil.all, :id, :nombre) %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :sexo_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :sexo_id, :class => 'number_field' %>
+      <%= f.collection_select(:sexo_id, Sexo.all, :id, :nombre) %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :fecha_nacimiento, :class => 'control-label' %>
     <div class="controls">
-      <%= f.date_select :fecha_nacimiento, :class => 'date_select' %>
+      <%= f.datepicker :fecha_nacimiento, :id => "datepicker" %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :localidad_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :localidad_id, :class => 'number_field' %>
+      <%= f.collection_select(:localidad_id, Localidad.all, :id, :nombre) %>
     </div>
   </div>
 
@@ -78,3 +78,19 @@
                 personas_path, :class => 'btn' %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+        
+          $("#datepicker").datepicker({dateFormat:"dd-mm-yy",
+          dayNamesMin: ["Do", "Lu", "Ma", "Mie", "Jue", "Vie", "Sa"],
+          changeYear: true,
+          yearRange: "1910:<%= Date.today.year + 10 %>", 
+          monthNames: ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"], 
+          monthNamesShort: ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"], 
+          navigationAsDateFormat: true,
+          nextText: "Sig", 
+          prevText: "Ant", 
+          showAnim: "explode"
+            });
+
+    </script>
