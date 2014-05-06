@@ -1,53 +1,62 @@
-<%= form_for(@establecimiento) do |f| %>
-  <% if @establecimiento.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@establecimiento.errors.count, "error") %> prohibited this establecimiento from being saved:</h2>
-
-      <ul>
-      <% @establecimiento.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @establecimiento, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :codigo_jurisdiccional, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :codigo_jurisdiccional, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :cue, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :cue, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :anexo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :anexo, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :cue_anexo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :cue_anexo, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :sector, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :sector, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :ambito, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :ambito, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :nombre, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nombre, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :localidad_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select(:localidad_id, Localidad.all, :id, :nombre) %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :domicilio, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :domicilio, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :codigo_jurisdiccional %><br />
-    <%= f.text_field :codigo_jurisdiccional %>
-  </div>
-  <div class="field">
-    <%= f.label :cue %><br />
-    <%= f.number_field :cue %>
-  </div>
-  <div class="field">
-    <%= f.label :anexo %><br />
-    <%= f.number_field :anexo %>
-  </div>
-  <div class="field">
-    <%= f.label :cue_anexo %><br />
-    <%= f.number_field :cue_anexo %>
-  </div>
-  <div class="field">
-    <%= f.label :sector %><br />
-    <%= f.text_field :sector %>
-  </div>
-  <div class="field">
-    <%= f.label :ambito %><br />
-    <%= f.text_field :ambito %>
-  </div>
-  <div class="field">
-    <%= f.label :nombre %><br />
-    <%= f.text_field :nombre %>
-  </div>
-  <div class="field">
-    <%= f.label :localidad_id %><br />
-    <%= f.number_field :localidad_id %>
-  </div>
-  <div class="field">
-    <%= f.label :domicilio %><br />
-    <%= f.text_field :domicilio %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                establecimientos_path, :class => 'btn' %>
   </div>
 <% end %>
