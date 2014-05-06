@@ -8,3 +8,5 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require allPages
+//= require dataTables/jquery.dataTables
+//= require dataTables/jquery.dataTables.bootstrap
