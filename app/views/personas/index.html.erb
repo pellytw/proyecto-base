@@ -17,7 +17,7 @@
       <th><%= model_class.human_attribute_name(:sexo_id) %></th>
       <th><%= model_class.human_attribute_name(:fecha_nacimiento) %></th>
       <th><%= model_class.human_attribute_name(:localidad_id) %></th>
-      <th><%= model_class.human_attribute_name(:situacion_revista_id) %></th>
+      <th><%= model_class.human_attribute_name(:telefono_contacto) %></th>
       <th class="pull-right"><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -34,9 +34,9 @@
         <td><%= persona.depto %></td>
         <td><%= persona.estado_civil %></td>
         <td><%= persona.sexo %></td>
-        <td><%= persona.fecha_nacimiento %></td>
+        <td><%= Util.fecha_a_es(persona.fecha_nacimiento) %></td>
         <td><%= persona.localidad %></td>
-        <td><%= SituacionRevistum.find(persona.situacion_revista_id) %></td>
+        <td><%= persona.telefono_contacto %></td>
         <td>
           <div class="btn-group pull-right">
             <a class="btn dropdown-toggle btn-primary" data-toggle="dropdown" href="#">
